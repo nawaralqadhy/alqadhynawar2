@@ -1,4 +1,5 @@
 package com.example.nawaralqadhy.alqadhynawar2.adapter;
+// 1- commint and push for update , and when the color change that means its ok
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -48,6 +49,7 @@ public class ListViewAdapter extends BaseAdapter {
         textView.setText(String.valueOf(position));
 
         return rowView;
+        // hello nawar
 
 
     }
