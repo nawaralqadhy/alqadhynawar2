@@ -30,8 +30,7 @@
         <ImageButton
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/bt_style"
+
             android:layout_marginLeft="12dp"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -41,7 +40,9 @@
         <ImageButton
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@color/white"
+            android:background="@android:color/transparent"
+            android:src="@drawable/bt_style"
+
             android:layout_marginLeft="12dp"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"
@@ -71,7 +72,7 @@
             android:id="@+id/bt1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight=".45"
             android:layout_margin="6dp"
             android:background="@color/white"
             android:onClick="onClick"
@@ -88,7 +89,7 @@
             android:id="@+id/bt3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight=".45"
             android:layout_margin="6dp"
             android:background="@color/white"
             />
