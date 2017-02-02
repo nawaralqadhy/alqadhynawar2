@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+
 import com.example.nawaralqadhy.alqadhynawar2.adapter.ListViewAdapter;
 
 public class ListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
