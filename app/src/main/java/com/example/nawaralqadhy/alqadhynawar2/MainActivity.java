@@ -1,5 +1,6 @@
 package com.example.nawaralqadhy.alqadhynawar2;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,66 +12,65 @@ import com.example.nawaralqadhy.alqadhynawar2.util.UtilLog;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+// The R object is based on the resource folder. If you have an error with R, then you have errors
+// within your resource folder. The errors most likely  lies within the .xml files you created
+// You must fix those prior to fixing the ones in the java files
+
 public class MainActivity extends BaseActivity {
 
     private ImageButton bt1;
     private ImageButton bt3;
 
     @OnClick(R.id.bt2)
-    public void button2Click(){
+    public void button2Click() {
         toActivity(DialogActivity.class);
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initialView();
         initialListener();
+        // Must have ButterKnife dependency
         ButterKnife.bind(this);
     }
 
-
-
-
-    private void initialView(){
-
+    private void initialView() {
         bt1 = (ImageButton) findViewById(R.id.bt1);
         bt3 = (ImageButton) findViewById(R.id.bt3);
-
     }
 
-    private void initialListener(){
+    private void initialListener() {
+        // Methods should start with lower case letters
+        bt1.setOnClickListener(new View.OnClickListener() {
+                                   @Override
+                                   public void onClick(View v) {
+                                       Toast.makeText(v.getContext(),"Button1 was clicked",Toast.LENGTH_LONG).show();
+                                       Intent intent = new Intent(v.getContext(), ViewPagerActivity.class);
+                                       startActivity(intent);
+                                   }
+                               }
+        );
 
-        bt1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Toast.makeText(v.getContext(), "Button 1 was clicked", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent (v.getContext(),ViewPagerActivity.class);
-                startActivity(intent);
-            }
-
-        });
         bt3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                toActivity(ListViewActivity.class);
-//                Intent intent = new Intent(v.getContext(),ListViewActivity.class);
-//                startActivity(intent);
-
-            }
-        });
+                                   @Override
+                                   public void onClick(View v) {
+                                       toActivity(ListViewActivity.class);
+//                    Intent intent = new Intent(v.getContext(), ListViewActivity.class);
+//                    startActivity(intent);
+                                   }
+                               }
+        );
     }
-
-    public void onClick(View v){
-      //  Toast.makeText(this, "Button 2 was clicked", Toast.LENGTH_LONG).show();
-        toastLong("Button2 was Clicked");
-        UtilLog.logD("testD" , "Toast");
-       // Log.e("testD" , "Toast");
-        //Log.i("testD" , "Toast");
-        //Log.v("testD" , "Toast");
-        // Log.w("testD" , "Toast");
+    public void onClick(View v) {
+//        Toast.makeText(this,"Button2 was clicked",Toast.LENGTH_LONG).show();
+        toastLong("Button2 was clicked.");
+        UtilLog.logD("testD","Toast");
+        //Log.d("testD","Toast");
+        //Log.e("testE","Toast");
     }
 }
+
+// If a user clicks a button multiple times, you should use the setOnClickListener so that you
+// can save on resources.
