@@ -77,6 +77,7 @@ public class ListViewAdapter extends BaseAdapter {
             holder.lp.setMargins(UtilDensity.dip2px(mContext,50),0,0,0);
             holder.lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
             holder.textView2.setBackgroundResource(R.drawable.chatfrom_bg_focused);
+            holder.textView2.setLayoutParams(holder.lp);
 
 
 
