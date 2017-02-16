@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RadioGroup
@@ -8,71 +9,62 @@
         android:layout_width="match_parent"
         android:layout_height="350dp">
 
-
         <RadioButton
             android:id="@+id/rb1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="NormalDialog"
             android:layout_gravity="center"
-            android:gravity="left|center_vertical"
-            android:text="NormalDialog"/>
+            android:gravity="left|center_vertical"/>
         <RadioButton
             android:id="@+id/rb2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="ListDialog"
             android:layout_gravity="center"
-            android:gravity="left|center_vertical"
-            android:text="ItemDialog"/>
-
+            android:gravity="left|center_vertical"/>
         <RadioButton
             android:id="@+id/rb3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="SingleChoiceDialog"
             android:layout_gravity="center"
-            android:gravity="left|center_vertical"
-            android:text="SingleChoiceDialog"/>
-
+            android:gravity="left|center_vertical"/>
         <RadioButton
             android:id="@+id/rb4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="MultiChoiceDialog"
             android:layout_gravity="center"
-            android:gravity="left|center_vertical"
-            android:text="MultiChoiceDialog"/>
-
+            android:gravity="left|center_vertical"/>
         <RadioButton
             android:id="@+id/rb5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="WaitingDialog"
             android:layout_gravity="center"
-            android:gravity="left|center_vertical"
-            android:text="WaitingDialog"/>
-
+            android:gravity="left|center_vertical"/>
         <RadioButton
             android:id="@+id/rb6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="ProgressDialog"
             android:layout_gravity="center"
-            android:gravity="left|center_vertical"
-            android:text="ProgressDialog"/>
-
+            android:gravity="left|center_vertical"/>
         <RadioButton
             android:id="@+id/rb7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="InputDialog"
             android:layout_gravity="center"
-            android:gravity="left|center_vertical"
-            android:text="InputDialog"/>
-
+            android:gravity="left|center_vertical"/>
         <RadioButton
             android:id="@+id/rb8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="NormalDialog"
             android:layout_gravity="center"
-            android:gravity="left|center_vertical"
-            android:text="Dialog"/>
-
-
+            android:gravity="left|center_vertical"/>
 
 
     </RadioGroup>
@@ -82,6 +74,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="ok"/>
+        android:text="OK"/>
 
 </LinearLayout>
