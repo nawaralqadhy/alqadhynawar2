@@ -2,22 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/list_view_header"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="100dp"
     android:background="@color/white"
-    >
+    android:layout_height="250dp">
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:text="ListViewHeader"-->
+    <!--android:textSize="40sp"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:gravity="center">-->
+    <!--</TextView>-->
 
-
-
-
-    <TextView
+    <android.support.v4.view.ViewPager android:id="@+id/pager_header"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:textSize="40sp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:text="ListViewHeader"
-        />
-
-
+        android:layout_height="250dp"
+        xmlns:android="http://schemas.android.com/apk/res/android" />
 </LinearLayout>
