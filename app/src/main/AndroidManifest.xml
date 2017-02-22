@@ -18,8 +18,12 @@
         </activity>
         <activity android:name=".ListViewActivity" />
         <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".BaseActivity"></activity>
-        <activity android:name=".DialogActivity"></activity>
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".DialogActivity" />
+        <activity android:name=".ActivityA" />
+        <activity android:name=".ActivityB" />
+        <activity android:name=".ActivityC" />
+        <activity android:name=".ActivityD"></activity>
     </application>
 
 </manifest>

@@ -5,18 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    android:paddingBottom="0dp"
-    android:paddingLeft="0dp"
-    android:paddingRight="0dp"
-    android:paddingTop="0dp"
+
     tools:context="com.example.nawaralqadhy.alqadhynawar2.MainActivity">
+    >
 
     <RelativeLayout
-        android:id="@+id/title_bar"
+        android:id="@+id/titlebar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
-        android:background="@android:color/holo_blue_bright"
-        >
+        android:background="@android:color/holo_blue_bright">
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,11 +22,7 @@
             android:textSize="30sp"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:textColor="@color/white"
-            />
-
-
-
+            android:textColor="@color/white"/>
 
         <ImageButton
             android:layout_width="48dp"
@@ -38,66 +31,56 @@
             android:src="@drawable/bt_style"
             android:layout_marginLeft="12dp"
             android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            />
+            android:layout_alignParentLeft="true"/>
 
         <ImageButton
+            android:id="@+id/bt4"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/bt_style_xml"
             android:layout_marginRight="12dp"
             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-
-            />
+            android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/tool_bar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/holo_green_light"
-        >
+        android:orientation="horizontal"
+        android:background="@android:color/holo_green_light">
 
         <ImageButton
             android:id="@+id/bt1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".45"
             android:layout_margin="6dp"
-            android:background="@color/white"
-            android:onClick="onClick"
-            />
+            android:layout_weight="1"
+            android:background="@android:color/white"/>
+
         <ImageButton
             android:id="@+id/bt2"
-            android:onClick="onClick"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_margin="6dp"
-            android:background="@color/white"
-            />
+            android:layout_weight="1"
+            android:background="@android:color/white"/>
+
         <ImageButton
             android:id="@+id/bt3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".45"
             android:layout_margin="6dp"
-            android:background="@color/white"
-            />
-
+            android:layout_weight="1"
+            android:background="@android:color/white"/>
     </LinearLayout>
 
     <ListView
-        android:layout_below="@id/title_bar"
-        android:layout_above="@id/tool_bar"
+        android:layout_above="@id/toolbar"
+        android:layout_below="@id/titlebar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white">
-
-    </ListView>
-
-
+        android:background="@color/white"></ListView>
 </RelativeLayout>
