@@ -20,10 +20,11 @@
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".DialogActivity" />
-        <activity android:name=".ActivityA" />
-        <activity android:name=".ActivityB" />
-        <activity android:name=".ActivityC" />
-        <activity android:name=".ActivityD"></activity>
+
+        <activity android:name=".ActivityB" android:launchMode="singleTop"/>
+        <activity android:name=".ActivityC" android:launchMode="singleTop"/>
+        <activity android:name=".ActivityA" android:launchMode="singleTop"/>
+        <activity android:name=".ActivityD" android:launchMode="singleTop"/>>
     </application>
 
 </manifest>
