@@ -1,5 +1,6 @@
 package com.example.nawaralqadhy.alqadhynawar2.dialog;
 
+
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -10,9 +11,9 @@ import com.example.nawaralqadhy.alqadhynawar2.R;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by lauraccs on 2/15/17.
- */
+
+
+
 
 public class CustomDialog extends Dialog {
 
