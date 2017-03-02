@@ -33,6 +33,15 @@ public class MainActivity extends BaseActivity {
             //toActivity(DialogActivity.class);
         }
 
+    @OnClick(R.id.animation_bt)
+    public void buttonAnimationClick(){
+        Intent intent = new Intent(this, AnimationActivity.class);
+        startActivity(intent);
+        //toActivity(DialogActivity.class);
+    }
+
+
+
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {

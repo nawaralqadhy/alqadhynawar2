@@ -19,14 +19,13 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class DialogActivity extends BaseActivity{
 
+public class DialogActivity extends BaseActivity{
     private final int DIALOG=12345;
 
     Handler mHandler= new Handler() {
-
-        //@Override
-        public void handlerMessage(Message msg) {
+        @Override
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case DIALOG:
                     Bundle bundle = msg.getData();
@@ -34,11 +33,14 @@ public class DialogActivity extends BaseActivity{
                     toastShort("Dialog Message: " + s);
                     break;
                 default:
-
             }
             super.handleMessage(msg);
         }
     };
+
+    
+
+
 
     private int checkedID;
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
 
-    tools:context="com.example.nawaralqadhy.alqadhynawar2.ActivityA">
+    tools:context="com.example.nawaralqadhy.alqadhynawar2.MainActivity">
     >
 
     <RelativeLayout
@@ -89,14 +89,29 @@
         android:layout_below="@+id/titlebar"
         android:layout_above="@+id/toolbar"
         android:background="@color/white">
-        <Button
-            android:id="@+id/main_timer_bt"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:text="Timer"
-            android:textAllCaps="false"
-            android:textSize="20sp"
-            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/main_timer_bt"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:text="Timer"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                />
+            <Button
+                android:id="@+id/animation_bt"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Animation"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
 
     </FrameLayout>
 
