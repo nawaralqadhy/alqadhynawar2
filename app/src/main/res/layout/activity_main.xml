@@ -84,6 +84,7 @@
         android:layout_height="match_parent"
         android:background="@color/white"></ListView>
     <FrameLayout
+        android:id="@+id/main_fl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/titlebar"
@@ -110,6 +111,15 @@
                 android:textAllCaps="false"
                 android:textSize="20sp"
                 />
+            <Button
+                android:id="@+id/animator_bt"
+                android:layout_width="130dp"
+                android:layout_height="60dp"
+                android:text="Animator"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                />
+
 
         </LinearLayout>
 

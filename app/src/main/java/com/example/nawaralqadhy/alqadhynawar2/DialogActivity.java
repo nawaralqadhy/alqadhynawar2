@@ -21,6 +21,7 @@ import butterknife.OnClick;
 
 
 public class DialogActivity extends BaseActivity{
+
     private final int DIALOG=12345;
 
     Handler mHandler= new Handler() {
@@ -37,10 +38,6 @@ public class DialogActivity extends BaseActivity{
             super.handleMessage(msg);
         }
     };
-
-    
-
-
 
     private int checkedID;
 
@@ -129,12 +126,12 @@ public class DialogActivity extends BaseActivity{
 
     private void progressDialog() {
         final int MAX_PROGRESS = 100;
-        final ProgressDialog processDialog = new ProgressDialog(this);
-        processDialog.setProgress(0);
-        processDialog.setTitle("Downloading");
-        processDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        processDialog.setMax(MAX_PROGRESS);
-        processDialog.show();
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setProgress(0);
+        progressDialog.setTitle("Downloading");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progressDialog.setMax(MAX_PROGRESS);
+        progressDialog.show();
 
         new Thread(new Runnable() {
             @Override
@@ -144,7 +141,7 @@ public class DialogActivity extends BaseActivity{
                     try {
                         Thread.sleep(100);
                         progress++;
-                        processDialog.setProgress(progress);
+                        progressDialog.setProgress(progress);
                     } catch (InterruptedException e){
                         e.printStackTrace();
                     }
@@ -156,7 +153,7 @@ public class DialogActivity extends BaseActivity{
                 msg.what=DIALOG;
                 msg.setData(bundle);
                 mHandler.sendMessage(msg);
-                processDialog.cancel();
+                progressDialog.cancel();
 
             }
         }).start();

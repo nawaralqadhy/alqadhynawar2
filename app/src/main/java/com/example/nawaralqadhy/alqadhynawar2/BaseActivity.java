@@ -13,17 +13,19 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void toActivity(Class name) {
-        Intent intent = new Intent(this, name);
+        Intent intent = new Intent(this,name);
         startActivity(intent);
     }
 
     public void toastLong(String content) {
-        Toast.makeText(this, content, Toast.LENGTH_LONG).show();
-
+        Toast.makeText(this,content,Toast.LENGTH_LONG).show();
     }
 
     public void toastShort(String content) {
-        Toast.makeText(this, content, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,content,Toast.LENGTH_SHORT).show();
+    }
+
+    public void UtilLog() {
 
     }
 }
