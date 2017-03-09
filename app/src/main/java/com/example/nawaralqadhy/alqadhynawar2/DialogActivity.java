@@ -10,14 +10,12 @@ import android.os.Message;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
-import com.example.nawaralqadhy.alqadhynawar2.dialog.CustomDialog;
-
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
+import dialog.CustomDialog;
 
 
 public class DialogActivity extends BaseActivity{

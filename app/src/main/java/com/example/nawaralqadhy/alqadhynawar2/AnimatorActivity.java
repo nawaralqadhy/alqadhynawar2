@@ -113,7 +113,7 @@ public class AnimatorActivity extends BaseActivity {
         animator.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-                UtilLog.logD("Yan","animation start");
+                UtilLog.logD("nawar","animation start");
             }
 
             @Override
@@ -123,12 +123,12 @@ public class AnimatorActivity extends BaseActivity {
 
             @Override
             public void onAnimationCancel(Animator animation) {
-                UtilLog.logD("Yan","animation cancel");
+                UtilLog.logD("nawar","animation cancel");
             }
 
             @Override
             public void onAnimationRepeat(Animator animation) {
-                UtilLog.logD("Yan","animation repeat");
+                UtilLog.logD("nawar","animation repeat");
             }
         });
         animator.setRepeatMode(ValueAnimator.REVERSE);

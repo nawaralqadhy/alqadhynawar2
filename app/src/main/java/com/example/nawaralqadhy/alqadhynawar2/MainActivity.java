@@ -16,6 +16,7 @@ import com.example.nawaralqadhy.alqadhynawar2.util.UtilLog;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import dialog.Quiz4;
 
 
 public class MainActivity extends BaseActivity implements View.OnTouchListener{
@@ -24,35 +25,67 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
     private ImageButton bt4;
     private GestureDetector mGestureDetector;
 
-    @BindView(R.id.main_fl)
-    FrameLayout fl;
+    @BindView(R.id.f1)
+    FrameLayout f1;
 
     @OnClick(R.id.bt2)
     public void button2Click(){
         Intent intent = new Intent(this, DialogActivity.class);
         startActivityForResult(intent, 2);
-        //toActivity(DialogActivity.class);
+
     }
 
     @OnClick(R.id.main_timer_bt)
     public void buttonTimerClick(){
         Intent intent = new Intent(this, TimerActivity.class);
         startActivity(intent);
-        //toActivity(DialogActivity.class);
+
     }
 
     @OnClick(R.id.animation_bt)
     public void buttonAnimationClick(){
         Intent intent = new Intent(this, AnimationActivity.class);
         startActivity(intent);
-        //toActivity(DialogActivity.class);
+
+    }
+
+    @OnClick(R.id.Quiz4)
+    public void Quiz4(){
+        final Quiz4 dialog = new Quiz4(this, new Quiz4.ICustomDialogEventListener() {
+            @Override
+            public void onClickListener() {
+                Intent intent = new Intent(MainActivity.this, DialogActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onClick2Listener() {
+                Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onClickCancel() {
+                Intent intent = new Intent(MainActivity.this,ViewPagerActivity.class);
+                intent.putExtra("key","value");
+                Bundle bundle = new Bundle();
+                bundle.putInt("Integer", 12345);
+                Book book = new Book();
+                book.setName("Android");
+                book.setAuthor("nawar");
+                bundle.putSerializable("book", book);
+                intent.putExtras(bundle);
+                startActivityForResult(intent, 1);
+            }
+        });
+        dialog.show();
     }
 
     @OnClick(R.id.animator_bt)
     public void buttonAnimatorClick(){
         Intent intent = new Intent(this, AnimatorActivity.class);
         startActivity(intent);
-        //toActivity(DialogActivity.class);
+
     }
 
     @Override
@@ -63,7 +96,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
         initialListener();
         ButterKnife.bind(this);
         mGestureDetector=new GestureDetector(this,new SimpleGestureListener());
-        fl.setOnTouchListener(this);
+        f1.setOnTouchListener(this);
     }
 
     private void initialView(){
@@ -72,7 +105,6 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
         bt4 = (ImageButton) findViewById(R.id.bt4);
 
     }
-
     private void initialListener(){
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +116,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
                 bundle.putInt("Integer", 12345);
                 Book book = new Book();
                 book.setName("Android");
-                book.setAuthor("Laura");
+                book.setAuthor("Nawar"); // My friend she was helping me in class .. Her name is Laura .....
                 bundle.putSerializable("book", book);
                 intent.putExtras(bundle);
                 startActivityForResult(intent, 1);

@@ -3,7 +3,7 @@ package com.example.nawaralqadhy.alqadhynawar2.util;
 import android.util.Log;
 
 /**
- * Created by Kenny on 2/6/2017.
+ * Created by nawaralqadhy on 2/6/2017.
  */
 
 public class UtilLog {
