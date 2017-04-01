@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nawaralqadhy.alqadhynawar2">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:name=".nawarApplication"
         android:allowBackup="true"
@@ -12,7 +17,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -34,9 +38,13 @@
             android:name=".ActivityD"
             android:launchMode="singleInstance" />
         <activity android:name=".TimerActivity" />
-        <activity android:name=".AnimationActivity"></activity>
-        <activity android:name=".AnimatorActivity"/>
-
+        -        <activity android:name=".AnimationActivity"></activity>
+        -        <activity android:name=".AnimatorActivity"/>
+        -
+        +        <activity android:name=".AnimationActivity" />
+        +        <activity android:name=".AnimatorActivity" />
+        +        <!--<activity android:name=".LoginActivity"></activity>-->
+        +        <!--<activity android:name=".SQLiteActivity"/>-->
     </application>
 
 </manifest>

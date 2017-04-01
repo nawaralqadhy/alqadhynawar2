@@ -1,6 +1,7 @@
 package com.example.nawaralqadhy.alqadhynawar2;
 
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.GestureDetector;
@@ -8,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.nawaralqadhy.alqadhynawar2.bean.Book;
@@ -19,35 +21,116 @@ import butterknife.OnClick;
 import dialog.Quiz4;
 
 
+
 public class MainActivity extends BaseActivity implements View.OnTouchListener{
     private ImageButton bt1;
     private ImageButton bt3;
     private ImageButton bt4;
     private GestureDetector mGestureDetector;
+    int counter=0;
 
     @BindView(R.id.f1)
     FrameLayout f1;
+
+    @BindView(R.id.listOfActivity)
+    LinearLayout ll;
 
     @OnClick(R.id.bt2)
     public void button2Click(){
         Intent intent = new Intent(this, DialogActivity.class);
         startActivityForResult(intent, 2);
-
+        //toActivity(DialogActivity.class);
     }
 
     @OnClick(R.id.main_timer_bt)
     public void buttonTimerClick(){
         Intent intent = new Intent(this, TimerActivity.class);
         startActivity(intent);
-
+        //toActivity(DialogActivity.class);
     }
 
     @OnClick(R.id.animation_bt)
     public void buttonAnimationClick(){
         Intent intent = new Intent(this, AnimationActivity.class);
         startActivity(intent);
+        //toActivity(DialogActivity.class);
+    }
+
+    @OnClick(R.id.viewPagerActivityBt)
+    public void viewPagerActivity(){
+        Intent intent = new Intent(this,ViewPagerActivity.class);
+        intent.putExtra("key","value");
+        Bundle bundle = new Bundle();
+        bundle.putInt("Integer", 12345);
+        Book book = new Book();
+        book.setName("Android");
+        book.setAuthor("Nawar");
+        bundle.putSerializable("book", book);
+        intent.putExtras(bundle);
+        startActivityForResult(intent, 1);
+    }
+
+    @OnClick(R.id.dialogActivityBt)
+    public void dialogActivity(){
+        toActivity(DialogActivity.class);
+    }
+
+    @OnClick(R.id.listViewActivityBt)
+    public void listViewActivity(){
+        toActivity(ListViewActivity.class);
+    }
+
+    @OnClick(R.id.animationActivity)
+    public void animationActivity(){
+        toActivity(AnimationActivity.class);
+    }
+
+    @OnClick(R.id.animatorActivity)
+    public void animatorActivity(){
+        toActivity(AnimatorActivity.class);
+    }
+
+    @OnClick(R.id.timerActivity)
+    public void timerActivity(){
+        toActivity(TimerActivity.class);
+    }
+
+    @OnClick(R.id.aActivityBt)
+    public void aActivity(){
+        toActivity(ActivityA.class);
+    }
+
+    @OnClick(R.id.bActivityBt)
+    public void bActivity(){
+        toActivity(ActivityB.class);
+    }
+
+    @OnClick(R.id.cActivityBt)
+    public void cActivity(){
+        toActivity(ActivityC.class);
+    }
+    @OnClick(R.id.dActivityBt)
+    public void dActivity(){
+        toActivity(ActivityD.class);
+    }
+    @OnClick(R.id.move)
+    public void move(){
+        if(counter==0){
+            ObjectAnimator animator = ObjectAnimator.ofFloat(ll, "translationX", 0, 950, 950,950,950); //translationY
+            animator.setDuration(1000);
+            animator.start();
+            counter++;
+        }
+        else{
+            ObjectAnimator animator = ObjectAnimator.ofFloat(ll, "translationX", 950, 0, 0,0,0); //translationY
+            animator.setDuration(1000);
+            animator.start();
+            counter=0;
+        }
 
     }
+
+
 
     @OnClick(R.id.Quiz4)
     public void Quiz4(){
@@ -72,7 +155,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
                 bundle.putInt("Integer", 12345);
                 Book book = new Book();
                 book.setName("Android");
-                book.setAuthor("nawar");
+                book.setAuthor("Nawar");
                 bundle.putSerializable("book", book);
                 intent.putExtras(bundle);
                 startActivityForResult(intent, 1);
@@ -85,7 +168,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
     public void buttonAnimatorClick(){
         Intent intent = new Intent(this, AnimatorActivity.class);
         startActivity(intent);
-
+        //toActivity(DialogActivity.class);
     }
 
     @Override
@@ -116,7 +199,7 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
                 bundle.putInt("Integer", 12345);
                 Book book = new Book();
                 book.setName("Android");
-                book.setAuthor("Nawar"); // My friend she was helping me in class .. Her name is Laura .....
+                book.setAuthor("Nawar");
                 bundle.putSerializable("book", book);
                 intent.putExtras(bundle);
                 startActivityForResult(intent, 1);
@@ -184,7 +267,9 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
     private class SimpleGestureListener extends GestureDetector.SimpleOnGestureListener{
         public boolean onDown(MotionEvent e){
             UtilLog.logD("MyGesture","onDown");
-            //toastShort("onDown");
+//            toastShort("onDown");
+
+
             return true;
         }
         public void onShowPress(MotionEvent e){
@@ -193,34 +278,54 @@ public class MainActivity extends BaseActivity implements View.OnTouchListener{
         }
         public void onLongPress(MotionEvent e){
             UtilLog.logD("MyGesture","onLongPress");
-            toastShort("onLongPress");
+            //toastShort("onLongPress");
         }
         public boolean onSingleTapUp(MotionEvent e){
             UtilLog.logD("MyGesture","onSingleTapUp");
-            toastShort("onSingleTapUp");
+            //toastShort("onSingleTapUp");
             return true;
         }
         public boolean onSingleTapConfirmed(MotionEvent e)
         {
             UtilLog.logD("MyGesture","onSingleTapConfirmed");
-            toastShort("onSingleTapConfirmed");
+//            toastShort("onSingleTapConfirmed");
+            if(counter==1){
+                ObjectAnimator animator = ObjectAnimator.ofFloat(ll, "translationX", 950, 0, 0,0,0); //translationY
+                animator.setDuration(1000);
+                animator.start();
+                counter=0;
+            }
             return true;
         }
         public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,float distanceY){
             UtilLog.logD("MyGesture","onScroll:"+(e2.getX()-e1.getX())+" "+distanceX);
-            toastShort("onScroll");
+            //toastShort("onScroll");
             return true;
         }
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY){
-            toastShort("onFling");
+//            toastShort("onFling");
+
+            if(counter==0){
+                ObjectAnimator animator = ObjectAnimator.ofFloat(ll, "translationX", 0, 950, 950,950,950); //translationY
+                animator.setDuration(1000);
+                animator.start();
+
+                counter++;
+            }
+            else{
+                ObjectAnimator animator = ObjectAnimator.ofFloat(ll, "translationX", 950, 0, 0,0,0); //translationY
+                animator.setDuration(1000);
+                animator.start();
+                counter=0;
+            }
             return true;
         }
         public boolean onDoubleTap(MotionEvent e){
-            toastShort("onDoubleTap");
+            //toastShort("onDoubleTap");
             return true;
         }
         public boolean onDoubleTapEvent(MotionEvent e){
-            toastShort("onDoubleTapEvent");
+            //toastShort("onDoubleTapEvent");
             return true;
         }
 

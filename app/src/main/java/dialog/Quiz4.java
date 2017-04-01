@@ -24,25 +24,29 @@ public class Quiz4 extends Dialog {
 
     private int checkedID;
 
+    /**
+     *
+     */
     @BindView(R.id.rdg)
-    RadioGroup radioGroup;
+    RadioGroup radiogroup;
 
     @OnClick(R.id.dialog_ok)
     public void okClick(){
-        if(checkedID==R.id.rb1){
-            listener.onClickListener();
-        }
-        else if(checkedID==R.id.rb2){
-            listener.onClick2Listener();
-        }
-        dismiss();
-    }
+        if(checkedID==R.id.rb1){listener.onClickListener();// we have the listener here are connected to all other listener together.
 
-    @OnClick(R.id.dialog_cancel)
-    public void cancelClick(){
-        listener.onClickCancel();
+        }
+        else if(checkedID==R.id.rb2){listener.onClick2Listener();
+        }
         dismiss();
     }
+    public Quiz4(@NonNull Context context, ICustomDialogEventListener listener) {
+        super(context, R.style.dialog);
+        this.listener = listener;
+    }@OnClick(R.id.dialog_cancel)
+    public void cancelClick(){
+            listener.onClickCancel();
+        dismiss();}
+
 
     private ICustomDialogEventListener listener;
 
@@ -51,26 +55,34 @@ public class Quiz4 extends Dialog {
         public void onClick2Listener();
         public void onClickCancel();
 
-    }
+    } @Override
 
 
-    public Quiz4(@NonNull Context context, ICustomDialogEventListener listener) {
-        super(context, R.style.dialog);
-        this.listener = listener;
-    }
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.quiz4);
+        super.onCreate(savedInstanceState);
+
         ButterKnife.bind(this);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 checkedID = checkedId;
 
+
+
             }
         });
+
+
     }
 }
+
+
+
+
+
